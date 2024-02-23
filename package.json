@@ -33,18 +33,19 @@
       ]
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "lint": "eslint .",
-    "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
+    "dev": "pnpm run -r --parallel --filter=./apps/* dev",
+    "build": "pnpm run -r --filter=./apps/* build",
+    "web:dev": "pnpm --filter=./apps/web dev",
+    "server:dev": "pnpm --filter=./apps/server dev",
+    "js:build": "unbuild",
+    "js:dev": "unbuild --stub",
+    "js:lint": "eslint .",
+    "js:prepublishOnly": "nr build",
+    "js:release": "bumpp && npm publish",
+    "js:start": "esno src/index.ts",
+    "js:test": "vitest",
+    "js:typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {

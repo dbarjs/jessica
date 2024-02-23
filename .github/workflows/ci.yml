@@ -30,7 +30,7 @@ jobs:
         run: nci
 
       - name: Lint
-        run: nr lint
+        run: nr js:lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
         run: nci
 
       - name: Typecheck
-        run: nr typecheck
+        run: nr js:typecheck
 
   test:
     runs-on: ${{ matrix.os }}
@@ -81,7 +81,7 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build
+        run: nr js:build
 
       - name: Test
-        run: nr test
+        run: nr js:test

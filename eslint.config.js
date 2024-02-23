@@ -6,6 +6,10 @@ export default antfu(
     ignores: [
       // eslint ignore globs here
     ],
+
+    // explicitly set the parser
+    typescript: true,
+    vue: true,
   },
   {
     rules: {
